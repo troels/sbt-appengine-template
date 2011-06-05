@@ -1,0 +1,25 @@
+namespace Main
+
+def mainpage title
+ head:
+ body: 
+ html 
+  head 
+   title
+    | { title }
+   | { head }
+  body
+   | { body }
+
+def testpage
+ - mainpage {"hello there"}
+  body:
+   - titleAndContent {" Hi there "}
+    contents: 
+     | Good people are beautiful
+
+def titleAndContent title contents 
+ h1
+  | { title } 
+ p 
+  | { contents } 
